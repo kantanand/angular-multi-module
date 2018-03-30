@@ -1,0 +1,20 @@
+<form class="form-signin">
+  <div class="login-container" layout="row" *ngIf="!is_authenticated">
+  <h2>Login</h2>
+    <mat-form-field>
+      <input matInput placeholder="Username/Eamil" [(ngModel)]="username" name="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="password" [(ngModel)]="password" name="password">
+    </mat-form-field>
+    <button mat-button mat-raised-button color="primary" type="button" (click)="login(username, password)">Login</button>
+  </div>
+  <div layout="row" *ngIf="is_authenticated">
+    <div class="login-container">
+      <h2>Welcome {{ user_details.first_name }} </h2>
+      <span>last login: {{ user_details.last_login }} </span>
+    </div>
+    <button mat-button mat-raised-button class="warn" (click)="logout()">logout</button>
+  </div>
+</form>
+
