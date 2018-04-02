@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
@@ -13,12 +14,25 @@ export class AuthGuardService implements CanActivate {
   canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     // const accessToken = this.authentication.getAccessToken();
     if (this.authentication.isAuthenticated()) {
-      if (!this.authentication.isJwtTokenExpired()) {
-        this.authentication.refreshToken();
+      if (this.authentication.isTimeToRenewJwtToken()) {
+        console.log('is time to auth: ' + true);
+        if (!this.authentication.isJwtTokenExpired()) {
+          this.authentication.refreshToken().subscribe(
+            data => {
+              return true;
+            },
+            error => {
+              return false;
+            }
+          );
+        } else {
+          this.authentication.removeToken(state.url);
+          return false;
+        }
       } else {
-        return false;
+        console.log('is time to auth: ' + false);
+        return true;
       }
-      return true;
     } else {
       console.error('User is not authenticated.');
       this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });

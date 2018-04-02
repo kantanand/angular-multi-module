@@ -25,7 +25,7 @@ export class UserdashboardPageComponent implements OnInit {
   get_user_details() {
     this._userService.getUserDetails().subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.user_details = data;
       },
       error => {
