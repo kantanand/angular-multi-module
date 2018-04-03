@@ -36,6 +36,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     loadChildren: 'app/save-page/save-page.module#SavePageModule'
   },
+  {
+    path: 'trex',
+    canActivate: [AuthGuardService],
+    loadChildren: 'app/trex-page/trex-page.module#TrexPageModule'
+  },
   // {
   //   path: 'admin',
   //   canActivate: [AuthGuardService],
