@@ -28,8 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-This project is released under MIT License [MIT License](https://github.com/kantanand/angular-multi-module/blob/master/LICENSE).
-MIT License
+This project is released under GPL v3 License [GPL v3 License](https://github.com/kantanand/angular-multi-module/blob/master/LICENSE).
+GPL v3 License
 
 Copyright (c) 2018 Kantanand US
 contact: kantanand.usk@gmail.com
