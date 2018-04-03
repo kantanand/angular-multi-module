@@ -31,6 +31,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     loadChildren: 'app/userdashboard-page/userdashboard-page.module#UserdashboardPageModule'
   },
+  {
+    path: 'save',
+    canActivate: [AuthGuardService],
+    loadChildren: 'app/save-page/save-page.module#SavePageModule'
+  },
   // {
   //   path: 'admin',
   //   canActivate: [AuthGuardService],
