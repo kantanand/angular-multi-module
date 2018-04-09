@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SavePageComponent
+  },  
+  {
+    path: 'explore-and-book',
+    canActivate: [AuthGuardService],
+    loadChildren: './explore-and-book-page/explore-and-book-page.module#ExploreAndBookPageModule'
   }
 ];
 

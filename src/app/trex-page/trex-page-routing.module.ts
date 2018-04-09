@@ -6,9 +6,11 @@ import { TrexPageComponent } from './trex-page.component';
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuardService],
     component: TrexPageComponent
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
