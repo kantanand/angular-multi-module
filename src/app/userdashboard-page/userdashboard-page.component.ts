@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './service/user.service';
-import { AuthenticationService } from '../core/services/authentication.service';
+import { AuthenticationService } from '@app/core/services';
 
 @Component({
   selector: 'app-userdashboard-page',

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DetailsPageRoutingModule } from './details-page-routing.module';
 import { DetailsPageComponent } from './details-page.component';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
   imports: [

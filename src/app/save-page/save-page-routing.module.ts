@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuardService } from '../core/services/auth-guard.service';
+import { AuthGuardService } from '@app/core/services';
 import { SavePageComponent } from './save-page.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SavePageComponent
-  },  
+  },
   {
     path: 'explore-and-book',
     canActivate: [AuthGuardService],

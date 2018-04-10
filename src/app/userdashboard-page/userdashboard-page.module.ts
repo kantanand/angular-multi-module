@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UserdashboardPageRoutingModule } from './userdashboard-page-routing.module';
 import { UserdashboardPageComponent } from './userdashboard-page.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { UserService } from './service/user.service';
 
 @NgModule({

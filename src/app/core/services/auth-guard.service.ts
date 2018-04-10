@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AuthenticationService } from './authentication.service';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
@@ -12,7 +12,6 @@ export class AuthGuardService implements CanActivate {
   ) { }
 
   canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    // const accessToken = this.authentication.getAccessToken();
     if (this.authentication.isAuthenticated()) {
       if (this.authentication.isTimeToRenewJwtToken()) {
         console.log('is time to auth: ' + true);
