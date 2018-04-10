@@ -1,7 +1,26 @@
 {
   "name": "angular-multi-module",
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Angular 5 Multi modle iwth lazy loaded",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kantanand/angular-multi-module.git"
+  },
+  "keywords": [
+    "angular",
+    "5",
+    "ng5",
+    "angular",
+    "multi",
+    "module",
+    "kantanand"
+  ],
+  "author": "kantanand.usk@gmail.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kantanand/angular-multi-module/issues"
+  },
+  "homepage": "https://github.com/kantanand/angular-multi-module#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
