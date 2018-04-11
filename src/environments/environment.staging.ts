@@ -1,4 +1,5 @@
 export const environment = {
     production: true,
-    animal: '🐻'
+    animal: '🐻',
+    DOMAIN: 'https://YOUR_STAGING_DOMAIN_NAME/'
 };

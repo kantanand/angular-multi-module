@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  animal: '🐊'
+  animal: '🐊',
+  DOMAIN: 'http://localhost:8000/'
 };
