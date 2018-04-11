@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { API_GET_AUTH_LOGIN, API_TOKEN_REFRESH, API_TOKEN_VERIFY } from '@app/core/constants';
+
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -24,8 +26,8 @@ export class AuthenticationService {
   constructor(private router: Router, private http: HttpClient) { }
 
   login(username, password) {
-    console.log('username:' + username, 'password:' + password);
-    const auth_url = 'http://localhost:8000/api/get-auth-login/';
+    console.log("username==",username)
+    const auth_url = API_GET_AUTH_LOGIN;
     return this.http.post<any>(auth_url, {username: username, password: password})
       .map(user_token => {
         console.log('user:', user_token.username);
@@ -124,7 +126,7 @@ export class AuthenticationService {
     // this the api to get refresh token and set it
     const current_token = this.getToken();
     const current_access_token = this.getAccessToken();
-    const jwt_token_refresh_url = 'http://localhost:8000/api/api-token-refresh/';
+    const jwt_token_refresh_url = API_TOKEN_REFRESH;
     return this.http.post<any>(jwt_token_refresh_url, { token: current_access_token })
       .map(response_data => {
         console.log('refreshToken: ', response_data);
@@ -143,7 +145,7 @@ export class AuthenticationService {
   verifyToken() {
     // REF: http://getblimp.github.io/django-rest-framework-jwt/#verify-token
     let status: Boolean = false;
-    const jwt_verify_token_url = 'http://localhost:8000/api/api-token-verify/';
+    const jwt_verify_token_url = API_TOKEN_VERIFY;
     this.http.post(jwt_verify_token_url, { token: this.getAccessToken() })
       .subscribe(
         response_success => {
