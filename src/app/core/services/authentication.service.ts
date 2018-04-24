@@ -26,7 +26,7 @@ export class AuthenticationService {
   constructor(private router: Router, private http: HttpClient) { }
 
   login(username, password) {
-    console.log("username==",username)
+    console.log('username:', username);
     const auth_url = API_GET_AUTH_LOGIN;
     return this.http.post<any>(auth_url, {username: username, password: password})
       .map(user_token => {
